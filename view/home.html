@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat Example</title>
+    <script src="//cdn.jsdelivr.net/npm/protobufjs@6.10.1/dist/protobuf.min.js"></script>
+    <script type="text/javascript">
+
+
+        window.onload = function () {
+            var conn;
+            var msg = document.getElementById("msg");
+            var log = document.getElementById("log");
+            var type = document.getElementById("type");
+            var username = guid();
+            var ws_message;
+            var payload =
+                {
+                    Type: "1",
+                    Msg: "I'm coming."
+                    // Username: "1",
+                    // Userlist: [],
+                    // IP: "1"
+                };
+
+            // 加载proto
+            protobuf.load("connect.proto", function (err, root) {
+                if (err)
+                    throw err;
+                ws_message = root.lookupType("com.Communication");
+
+            });
+
+            function appendLog(item) {
+                var doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
+                log.appendChild(item);
+                if (doScroll) {
+                    log.scrollTop = log.scrollHeight - log.clientHeight;
+                }
+            }
+
+            document.getElementById("form").onsubmit = function () {
+                if (!conn) {
+                    return false;
+                }
+                if (!msg.value && type.value === "1") {
+                    return false;
+                }
+                payload.Type = type.value;
+                if (msg.value) {
+                    payload.Msg = msg.value;
+                }
+
+                var message = ws_message.create(payload);
+                var buffer = ws_message.encode(message).finish();
+
+                conn.send(buffer);
+                payload.Msg = "";
+                msg.value = "";
+                return false;
+            };
+
+            if (window["WebSocket"]) {
+                conn = new WebSocket("ws://" + document.location.host + "/ws?username=" + username);
+                conn.binaryType = 'arraybuffer'
+                conn.onclose = function (evt) {
+                    var item = document.createElement("div");
+                    item.innerHTML = "<b>Connection closed.</b>";
+                    appendLog(item);
+                };
+                conn.onmessage = function (evt) {
+                    var messages = evt.data;
+                    messages = ws_message.decode(new Uint8Array(messages)).Msg;
+
+                    var item = document.createElement("div");
+                    item.innerText = getNowDate() + " " + messages;
+                    appendLog(item);
+                };
+            } else {
+                var item = document.createElement("div");
+                item.innerHTML = "<b>Your browser does not support WebSockets.</b>";
+                appendLog(item);
+            }
+        };
+
+        function guid() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0,
+                    v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        function getNowDate() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minute = date.getMinutes();
+            var second = date.getSeconds();
+            return year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second;
+        }
+
+    </script>
+    <style type="text/css">
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: gray;
+        }
+
+        #log {
+            background: white;
+            margin: 0;
+            padding: 0.5em 0.5em 0.5em 0.5em;
+            position: absolute;
+            top: 0.5em;
+            left: 0.5em;
+            right: 0.5em;
+            bottom: 3em;
+            overflow: auto;
+        }
+
+        #form {
+            padding: 0 0.5em 0 0.5em;
+            margin: 0;
+            position: absolute;
+            bottom: 1em;
+            left: 0px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div id="log"></div>
+<form id="form">
+    <input type="submit" value="Send"/>
+    <input type="text" id="msg" size="64" autofocus/>
+    <select id="type" style="width: 100px">
+        <option value="1">talk</option>
+        <option value="2">exit</option>
+    </select>
+</form>
+</body>
+</html>
