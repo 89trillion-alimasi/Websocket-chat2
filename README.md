@@ -116,10 +116,10 @@ type User struct {
 
    ```
    {
-   	 Type = "1";
+   	Type = "1";
      Msg： "来啦来啦" ;
      Username：“117835e871-8444-47f1-bd73-70e9350f68e7”;
-      Userlist=““;
+     Userlist=““;
      string  IP =“”;
    }
    ```
@@ -175,3 +175,4 @@ make vet
 
 
 
+![websocket-flow](/Users/alimasi/go/src/Websocket-chat/flow/websocket-flow.png)

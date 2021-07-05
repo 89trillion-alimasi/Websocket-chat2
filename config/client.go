@@ -7,7 +7,6 @@ package config
 import (
 	"Websocket-chat/Protobuf"
 	"Websocket-chat/db"
-	"fmt"
 	"google.golang.org/protobuf/proto"
 	"log"
 	"net/http"
@@ -30,18 +29,6 @@ const (
 
 	// Maximum message size allowed from peer.
 	maxMessageSize = 512
-)
-const (
-	// SystemMessage 系统消息
-	SystemMessage = iota
-	// Talk 广播消息(正常的消息)
-	Talk
-	// HeartBeatMessage 心跳消息
-	HeartBeatMessage
-	// ConnectedMessage 上线通知
-	ConnectedMessage
-	// Exit 下线通知
-	Exit
 )
 
 var (
@@ -90,14 +77,15 @@ func (c *Client) ReadPump() {
 			}
 			break
 		}
-		fmt.Println(message)
+		//fmt.Println(message)
 		obj := &Protobuf.Communication{}
 		proto.Unmarshal(message, obj)
 
-
-		msg := c.Username + " 说： " + obj.Msg
+		//fmt.Println("ggggg",obj)
+		msg := c.Username + ":" + obj.Msg
 		if obj.Type == "1" {
-			if obj.Msg == "userlist" {
+
+			if obj.Msg == "userlist" { //浏览器输入userlist
 				msg = db.GetAll()
 			} else {
 				log.Println(msg)
@@ -106,17 +94,27 @@ func (c *Client) ReadPump() {
 				Type: obj.Type,
 				Msg:  msg,
 			}
+			//fmt.Println("msg",msg)
 			data, _ := proto.Marshal(param)
+			//fmt.Println("type = 1, message:", data)
 			c.Hub.Broadcast <- data
-		} else {
+		} else if obj.Type == "2" {
 			param := &Protobuf.Communication{
 				Type: obj.Type,
-				Msg:  c.Username + "退出了",
+				Msg:  c.Username + "out",
 			}
 			data, _ := proto.Marshal(param)
 			c.Hub.Broadcast <- data
-			fmt.Println("=+====="+string(data))
+			//fmt.Println("=+====="+string(data))
 			break
+		} else {
+			msg = db.GetAll()
+			param := &Protobuf.Communication{
+				Type: obj.Type,
+				Msg:  msg,
+			}
+			data, _ := proto.Marshal(param)
+			c.Hub.Broadcast <- data
 		}
 
 	}
