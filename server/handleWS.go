@@ -13,11 +13,18 @@ import (
 
 // serveWs handles websocket requests from the peer.
 func ServeWs(hub *config.Hub, w http.ResponseWriter, r *http.Request) {
-
+	var username string
 	// 启动服务时将username存下来
 	values, _ := url.ParseQuery(r.URL.RawQuery)
-	db.Add(values["username"][0])
+	if len(values) == 0 {
+		// 其他客户端（GUI）从head中取login-username
+		username = r.Header.Get("login-username")
 
+	} else {
+		username = values["username"][0]
+
+	}
+	db.Add(username)
 	// 升级这个请求为 `websocket` 协议
 	conn, err := config.Upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -27,7 +34,7 @@ func ServeWs(hub *config.Hub, w http.ResponseWriter, r *http.Request) {
 	fmt.Println("client connected:", conn.RemoteAddr())
 
 	//初始化当前的客户端的实例，并与"hub"中心管理勾搭
-	client := &config.Client{Hub: hub, Conn: conn, Send: make(chan []byte, 256), Username: values["username"][0]}
+	client := &config.Client{Hub: hub, Conn: conn, Send: make(chan []byte, 256), Username: username}
 
 	client.Hub.Register <- client
 

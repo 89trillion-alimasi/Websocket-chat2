@@ -1,18 +1,16 @@
 package db
 
-import "fmt"
-
 type User struct {
 	UserName string
 }
 
 // 用于存储的内存容器
-var users map[string][] *User
+var users map[string][]*User
 
 // 存储数据
 func Add(username string) {
 	if users == nil {
-		users = make(map[string][] *User)
+		users = make(map[string][]*User)
 	}
 	users[username] = append(users[username])
 }
@@ -26,7 +24,7 @@ func GetAll() string {
 	for key, _ := range users {
 		userStr += key + ","
 	}
-	fmt.Println(userStr)
+	//fmt.Println(userStr)
 	return userStr
 }
 

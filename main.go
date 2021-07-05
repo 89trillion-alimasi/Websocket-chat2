@@ -7,7 +7,6 @@ package main
 import (
 	"Websocket-chat/router"
 	"flag"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -23,7 +22,6 @@ func main() {
 		log.Fatalf("file open error : %v", err)
 	}
 	log.SetOutput(logtext)
-	fmt.Println("开始聊天")
 	defer logtext.Close()
 
 	flag.Parse()

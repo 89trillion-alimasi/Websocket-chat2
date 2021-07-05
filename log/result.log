@@ -4847,3 +4847,402 @@
 2021/07/02 19:45:57 /connect.proto
 2021/07/02 19:45:57 /favicon.ico
 2021/07/02 19:46:06 7835e871-8444-47f1-bd73-70e9350f68e7 说： aw da
+2021/07/02 22:30:17 /
+2021/07/02 22:30:18 /connect.proto
+2021/07/03 16:13:51 /
+2021/07/03 16:13:53 /connect.proto
+2021/07/03 16:13:53 /favicon.ico
+2021/07/03 16:14:00 /
+2021/07/03 17:50:20 http: panic serving [::1]:57872: runtime error: index out of range [0] with length 0
+goroutine 25 [running]:
+net/http.(*conn).serve.func1(0xc0000c8f00)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000c01c8)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69d0, 0xc0001061c0, 0xc000110200)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:24 +0x575
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001061c0, 0xc000110200)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69d0, 0xc0001061c0, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001061c0, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69d0, 0xc0001061c0, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8f00, 0x14e7200, 0xc0000ca680)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 17:50:24 http: panic serving [::1]:57889: runtime error: index out of range [0] with length 0
+goroutine 5 [running]:
+net/http.(*conn).serve.func1(0xc00007c000)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000280d8)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69d0, 0xc00020a000, 0xc000200000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:24 +0x575
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc00020a000, 0xc000200000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69d0, 0xc00020a000, 0xc000200000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc00020a000, 0xc000200000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69d0, 0xc00020a000, 0xc000200000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc00007c000, 0x14e7200, 0xc00006a040)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 17:51:04 http: panic serving [::1]:58055: runtime error: index out of range [0] with length 0
+goroutine 7 [running]:
+net/http.(*conn).serve.func1(0xc000120d20)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc000028198)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:24 +0x575
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000120d20, 0x14e7200, 0xc00006a440)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 17:51:09 http: panic serving [::1]:58076: runtime error: index out of range [0] with length 0
+goroutine 18 [running]:
+net/http.(*conn).serve.func1(0xc000098000)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000aa060)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0000b0000, 0xc0000a2000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:24 +0x575
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0000b0000, 0xc0000a2000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0000b0000, 0xc0000a2000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0000b0000, 0xc0000a2000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0000b0000, 0xc0000a2000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000098000, 0x14e7200, 0xc00009c000)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 17:52:22 http: panic serving [::1]:58368: runtime error: index out of range [0] with length 0
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000c8c80)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000c0138)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8c80, 0x14e7200, 0xc0000ca400)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 18:52:23 http: panic serving [::1]:53784: runtime error: index out of range [0] with length 0
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000c8c80)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000c0138)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69d0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8c80, 0x14e7200, 0xc0000ca400)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 18:53:23 http: panic serving [::1]:54028: runtime error: index out of range [0] with length 0
+goroutine 22 [running]:
+net/http.(*conn).serve.func1(0xc0000c8d20)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000c01c8)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69d0, 0xc0001061c0, 0xc000110100)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001061c0, 0xc000110100)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69d0, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69d0, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8d20, 0x14e7200, 0xc0000ca5c0)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 18:57:46 http: panic serving [::1]:55097: runtime error: index out of range [0] with length 0
+goroutine 7 [running]:
+net/http.(*conn).serve.func1(0xc000120c80)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000281b0)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000120c80, 0x14e7200, 0xc00006a440)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 18:59:32 http: panic serving [::1]:55527: runtime error: index out of range [0] with length 0
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000c8d20)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000c0138)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e69f0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69f0, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e69f0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69f0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e69f0, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8d20, 0x14e7220, 0xc0000ca400)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:37:35 http: panic serving [::1]:57085: runtime error: index out of range [0] with length 0
+goroutine 7 [running]:
+net/http.(*conn).serve.func1(0xc000120d20)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000281b0)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0001560e0, 0xc000160000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000120d20, 0x14e7200, 0xc00006a440)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:40:22 http: panic serving [::1]:57759: runtime error: index out of range [0] with length 0
+goroutine 9 [running]:
+net/http.(*conn).serve.func1(0xc000120dc0)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc000028240)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0001561c0, 0xc000160100)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001561c0, 0xc000160100)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0001561c0, 0xc000160100)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001561c0, 0xc000160100)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0001561c0, 0xc000160100)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000120dc0, 0x14e7200, 0xc00006a600)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:44:39 http: panic serving [::1]:58802: runtime error: index out of range [0] with length 0
+goroutine 11 [running]:
+net/http.(*conn).serve.func1(0xc000120e60)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d8e0, 0xc0000282d0)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc000032180, 0x14e69d0, 0xc0001562a0, 0xc000160200)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e69d0, 0xc0001562a0, 0xc000160200)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000020f10, 0x14e69d0, 0xc0001562a0, 0xc000160200)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1725600, 0x14e69d0, 0xc0001562a0, 0xc000160200)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000156000, 0x14e69d0, 0xc0001562a0, 0xc000160200)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc000120e60, 0x14e7200, 0xc00006a740)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:47:04 http: panic serving [::1]:59394: runtime error: index out of range [0] with length 0
+goroutine 20 [running]:
+net/http.(*conn).serve.func1(0xc0000c8d20)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d980, 0xc0000c0138)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e6a90, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e6a90, 0xc0001060e0, 0xc000110000)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e6a90, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1726600, 0x14e6a90, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e6a90, 0xc0001060e0, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8d20, 0x14e72c0, 0xc0000ca400)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:48:34 http: panic serving [::1]:59759: runtime error: index out of range [0] with length 0
+goroutine 22 [running]:
+net/http.(*conn).serve.func1(0xc0000c8dc0)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d980, 0xc0000c01c8)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e6a90, 0xc0001061c0, 0xc000110100)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e6a90, 0xc0001061c0, 0xc000110100)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e6a90, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1726600, 0x14e6a90, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e6a90, 0xc0001061c0, 0xc000110100)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8dc0, 0x14e72c0, 0xc0000ca5c0)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:52:09 http: panic serving [::1]:60636: runtime error: index out of range [0] with length 0
+goroutine 24 [running]:
+net/http.(*conn).serve.func1(0xc0000c8e60)
+	/usr/local/go/src/net/http/server.go:1824 +0x153
+panic(0x143d980, 0xc000028108)
+	/usr/local/go/src/runtime/panic.go:971 +0x499
+Websocket-chat/server.ServeWs(0xc0000d2140, 0x14e6a90, 0xc000182000, 0xc000110200)
+	/Users/alimasi/go/src/Websocket-chat/server/handleWS.go:36 +0x57a
+Websocket-chat/router.Httpconnect.func1(0x14e6a90, 0xc000182000, 0xc000110200)
+	/Users/alimasi/go/src/Websocket-chat/router/router.go:16 +0x48
+net/http.HandlerFunc.ServeHTTP(0xc000098ef0, 0x14e6a90, 0xc000182000, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2069 +0x44
+net/http.(*ServeMux).ServeHTTP(0x1726600, 0x14e6a90, 0xc000182000, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2448 +0x1ad
+net/http.serverHandler.ServeHTTP(0xc000106000, 0x14e6a90, 0xc000182000, 0xc000110200)
+	/usr/local/go/src/net/http/server.go:2887 +0xa3
+net/http.(*conn).serve(0xc0000c8e60, 0x14e72c0, 0xc0000ca700)
+	/usr/local/go/src/net/http/server.go:1952 +0x8cd
+created by net/http.(*Server).Serve
+	/usr/local/go/src/net/http/server.go:3013 +0x39b
+2021/07/03 20:55:13 sss 说： ddd
+2021/07/03 21:03:00 /
+2021/07/03 21:03:00 /connect.proto
+2021/07/03 21:03:04 cd271112-602a-4639-822a-8e48060f8718 ： dadawd
+2021/07/03 21:03:25 asbfiaf ： abdiadi
+2021/07/03 21:07:18 daodinwani ： absdbawdbnabod
+2021/07/03 21:08:10 fasfafaf ： zscsadffafc
+2021/07/03 21:09:13 dbnaidak ： hoawsndiaodasdasdadwadwdafsdfss
+2021/07/03 21:12:58 fsafassfaf ： fsafafa
+2021/07/03 21:13:31 afbaf ： fasfasfa
+2021/07/03 21:14:02 basiubdiau ： svasfadfag
+2021/07/03 21:14:46 rw3rqr3 ： qrqrqrr
+2021/07/03 21:15:38 dawdad ： dawddaw
+2021/07/03 21:17:32 dhaiwhdiua:daudigiwa
+2021/07/03 21:18:16 dadwad:wdgaiubdda
+2021/07/03 21:19:55 wdadh89ah:dabwuda
+2021/07/03 21:20:00 dawda:daiubuwdi
+2021/07/05 07:33:25 faifbaisf:dawdwaa
+2021/07/05 07:33:49 awdadd:dwadadadadwa
+2021/07/05 07:34:02 awdadd:adwadndfgnd
+2021/07/05 07:34:09 faifbaisf:aaaaaaaaaaaafsdf
+2021/07/05 07:50:24 sdbauba:sawaafsefsad
+2021/07/05 07:51:01 adnains:asndauibdua
+2021/07/05 07:51:34 andiauw:dwaa
+2021/07/05 07:56:28 sbfbes:bfbfbfbf
+2021/07/05 08:00:23 asd aksd:hthehehe
+2021/07/05 08:05:16 /
+2021/07/05 08:05:21 /connect.proto
+2021/07/05 08:05:21 /favicon.ico
+2021/07/05 08:05:46 2860a336-0ad8-403e-9c19-b77f55ca2861:dadwinuauind
+2021/07/05 08:06:03 fba74925-8dce-47f3-8274-625e4005dca9:dawdnianwdw
+2021/07/05 08:08:47 /
+2021/07/05 08:08:48 /
+2021/07/05 08:08:52 204a107d-2079-42b9-8284-5f8931d1c50e:dawdada
+2021/07/05 08:09:21 /
+2021/07/05 08:09:25 63cb987a-8eb0-4444-9c43-edf56b186813:dawada
+2021/07/05 08:10:07 write tcp [::1]:8080->[::1]:52021: use of closed network connection
+2021/07/05 08:10:56 dawidina:daniwda
+2021/07/05 08:21:58 alms:ndwnadwaa
+2021/07/05 08:23:21 /
+2021/07/05 08:23:25 2a132f8f-722d-476e-9fb0-9cec1fb1ad99:safafas
+2021/07/05 08:25:14 write tcp [::1]:8080->[::1]:52063: use of closed network connection
+2021/07/05 08:25:34 /
+2021/07/05 08:25:35 /
+2021/07/05 08:25:38 e49687c6-80bc-468b-acbc-21920381acff:iuygguyg
+2021/07/05 08:32:21 mfonfioqwnfa:dawdada
+2021/07/05 10:43:40 wdawdaa:dadiad
+dadwadw
+2021/07/05 10:43:45 wdawdaa:dawdad
+2021/07/05 11:25:36 da dw a:adwdadw
+
+2021/07/05 13:21:49 awdnand:dawkd adw
+2021/07/05 13:22:58 wadaad:aawdba
+
+2021/07/05 13:23:06 wadaad:awdadwd
+2021/07/05 13:23:33 wadaad:daddaw
+2021/07/05 13:36:15 wdawda:wdadadwda
+2021/07/05 13:40:37 dawda:dwaddwa
+2021/07/05 13:40:40 dawda:dadwadwa
+2021/07/05 13:40:44 dawda:dwadwawda
+2021/07/05 13:40:46 dawda:dadwad
+2021/07/05 13:43:18 dwadadw:wdawdada
+2021/07/05 13:43:23 dwadadw:wadawdawd
+2021/07/05 13:43:29 dwadadw:wdawdd
+2021/07/05 13:45:18 awda:aifdiabdw
+2021/07/05 13:45:23 awda:dqwddqw
+2021/07/05 13:45:28 awda:dawda
+2021/07/05 13:45:32 awda:wdadda
+2021/07/05 13:53:28 /
+2021/07/05 13:53:41 56835ad2-27ff-4f41-8b11-2466c2839766:dwawda
+2021/07/05 14:01:21 /
+2021/07/05 14:01:28 922e75da-d067-4839-bc22-704ab4606c5f:dawdawda
+2021/07/05 14:38:09 dawdadwa:wdadda
+2021/07/05 14:38:09 write tcp [::1]:8080->[::1]:55161: use of closed network connection
+2021/07/05 14:40:18 dawda:dadwa
+2021/07/05 14:40:24 dawda:dawdadadw
+2021/07/05 14:40:35 dawda:dawdawda
+2021/07/05 14:40:37 dawda:awdawdd
+2021/07/05 14:40:53 ffdaw:awdad
+2021/07/05 14:41:19 ffdaw:adwadawd
+2021/07/05 14:41:34 dawda:dawdadwa
+2021/07/05 14:41:38 ffdaw:dabwdbah 
+2021/07/05 14:42:10 ffdaw:dvuawvduwava
+2021/07/05 14:42:24 dawda:wbaiwbdawdwd
+2021/07/05 14:54:54 adwadwa:dawdada
+2021/07/05 14:57:09 wadada:dawdad
+2021/07/05 14:59:50 dnanwdna:dwadada
+2021/07/05 15:00:07 dnanwdna:dawdawd
+2021/07/05 15:00:14 dnanwdna:wadawdawd
+2021/07/05 15:01:01 wdada:awdadd
+2021/07/05 15:01:05 wdada:wadad
+2021/07/05 15:11:27 adwwadad:dwadadaw
+2021/07/05 15:11:33 adwwadad:dawda
