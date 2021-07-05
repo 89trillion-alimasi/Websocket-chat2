@@ -30,7 +30,7 @@
 ├── db
 │   └── userDB.go #对用户的操作
 ├── flow
-│   └── websocket.png #流程图
+│   └── websocket-flow.png #流程图
 ├── go.mod
 ├── go.sum
 ├── log
