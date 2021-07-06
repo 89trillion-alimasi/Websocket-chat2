@@ -21,25 +21,22 @@
 ```
 .
 ├── Protobuf
-│   ├── connect.pb.go #存放的proto格式消息结构
+│   ├── connect.pb.go
 │   └── connect.proto
 ├── README.md
-├── config
-│   ├── client.go	#客户端读写
-│   └── hub.go #客户端统一管理
 ├── db
-│   └── userDB.go #对用户的操作
-├── flow
-│   └── websocket-flow.png #流程图
+│   └── userDB.go #用户存储操作
 ├── go.mod
 ├── go.sum
 ├── log
 │   └── result.log
 ├── main.go
 ├── router
-│   └── router.go #路由
+│   └── router.go
 ├── server
-│   └── handleWS.go #升级hanleWS
+│   ├── client.go
+│   ├── handleWS.go
+│   └── hub.go
 ├── test
 │   ├── __pycache__
 │   │   ├── connect_pb2.cpython-39.pyc
@@ -47,9 +44,10 @@
 │   ├── connect_pb2.py
 │   ├── locust_test.py
 │   └── report.html
-└── view
-    ├── connect.proto 
-    └── home.html
+├── view
+│   ├── connect.proto
+│   └── home.html
+└── websocket.png #流程图
 
 
 
@@ -64,10 +62,10 @@
 | 层         | 文件夹    | 主要职责               | 调用关系     | 其他说明 |
 | ---------- | --------- | ---------------------- | ------------ | -------- |
 | 应用层     | /main.go  | 程序启动               | 调用路由层   |          |
-| config层   | /config   | 客户读写，客户总体管理 | 被服务层调用 |          |
-| service层  | /service/ | 初始实例化客户         | config层     |          |
+| log层      | /log      | 存放用户的交互信息日志 | 被服务层调用 |          |
+| service层  | /service/ | 初始实例化客户         | 路由层       |          |
 | 路由层     | /router   | 路由初始化             | 被应用层调用 |          |
-| protobuf层 | /protobuf | 消息传送格式           | config       |          |
+| protobuf层 | /protobuf | 消息传送格式           | server层调用 |          |
 
 
 
@@ -173,6 +171,5 @@ make vet
 
 
 
+![websocket](websocket.png)
 
-
-![websocket-flow](/Users/alimasi/go/src/Websocket-chat/flow/websocket-flow.png)
