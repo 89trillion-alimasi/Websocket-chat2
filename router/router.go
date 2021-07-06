@@ -1,14 +1,13 @@
 package router
 
 import (
-	"Websocket-chat/config"
 	"Websocket-chat/server"
 	"log"
 	"net/http"
 )
 
 func Httpconnect() {
-	hub := config.NewHub()
+	hub := server.NewHub()
 	go hub.Run()
 	http.HandleFunc("/", serveHome)
 	http.HandleFunc("/connect.proto", proto)

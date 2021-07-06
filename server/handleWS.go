@@ -1,7 +1,6 @@
 package server
 
 import (
-	"Websocket-chat/config"
 	"Websocket-chat/db"
 	_ "Websocket-chat/db"
 	"fmt"
@@ -12,7 +11,7 @@ import (
 )
 
 // serveWs handles websocket requests from the peer.
-func ServeWs(hub *config.Hub, w http.ResponseWriter, r *http.Request) {
+func ServeWs(hub *Hub, w http.ResponseWriter, r *http.Request) {
 	var username string
 	// 启动服务时将username存下来
 	values, _ := url.ParseQuery(r.URL.RawQuery)
@@ -26,7 +25,7 @@ func ServeWs(hub *config.Hub, w http.ResponseWriter, r *http.Request) {
 	}
 	db.Add(username)
 	// 升级这个请求为 `websocket` 协议
-	conn, err := config.Upgrader.Upgrade(w, r, nil)
+	conn, err := Upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println(err)
 		return
@@ -34,7 +33,7 @@ func ServeWs(hub *config.Hub, w http.ResponseWriter, r *http.Request) {
 	fmt.Println("client connected:", conn.RemoteAddr())
 
 	//初始化当前的客户端的实例，并与"hub"中心管理勾搭
-	client := &config.Client{Hub: hub, Conn: conn, Send: make(chan []byte, 256), Username: username}
+	client := &Client{Hub: hub, Conn: conn, Send: make(chan []byte, 256), Username: username}
 
 	client.Hub.Register <- client
 
