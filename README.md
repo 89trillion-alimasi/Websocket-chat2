@@ -66,6 +66,8 @@
 | service层  | /service/ | 初始实例化客户         | 路由层       |          |
 | 路由层     | /router   | 路由初始化             | 被应用层调用 |          |
 | protobuf层 | /protobuf | 消息传送格式           | server层调用 |          |
+| Db层       | /db       | 用户相关操作           |              |          |
+| view层     | /view     | 存放前端聊天页面窗口   |              |          |
 
 
 
