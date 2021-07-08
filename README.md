@@ -1,3 +1,5 @@
+# Websocket-chat
+
 # Go技术文档-聊天服务
 
 ## 1.整体框架
@@ -28,7 +30,7 @@
 │   └── userDB.go #用户存储操作
 ├── go.mod
 ├── go.sum
-├── log
+├── log #日志层
 │   └── result.log
 ├── main.go
 ├── router
